@@ -40,6 +40,9 @@
 #import "Three20Core/TTDebugFlags.h"
 #import "Three20Core/NSDateAdditions.h"
 
+// Chamaleon UIKit.
+#import "UIView.h"
+
 static TTBaseNavigator* gNavigator = nil;
 
 static NSString* kNavigatorHistoryKey           = @"TTNavigatorHistory";
@@ -574,12 +577,17 @@ __attribute__((weak_import));
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIWindow*)window {
   if (nil == _window) {
-    UIWindow* keyWindow = [UIApplication sharedApplication].keyWindow;
-    if (nil != keyWindow) {
-      _window = [keyWindow retain];
+    UIWindow* anKeyWindow = [UIApplication sharedApplication].keyWindow;
+    if (nil != anKeyWindow) {
+      _window = [anKeyWindow retain];
 
     } else {
-      _window = [[[self windowClass] alloc] initWithFrame:TTScreenBounds()];
+ //       NSRect
+        CGRect anRect = CGRectZero;
+        UIView *anView = [[UIView alloc] initWithFrame:CGRectZero];
+        anView.frame = anRect;
+//        UIView* anView = [[UIView alloc] initWithFrame:CGRectZero];
+//      _window = [[[self windowClass] alloc] initWithFrame:TTScreenBounds()];
       [_window makeKeyAndVisible];
     }
   }

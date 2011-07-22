@@ -170,8 +170,8 @@
     return [text sizeWithFont:font];
 
   } else {
-    CGSize maxSize = CGSizeMake(size.width, CGFLOAT_MAX);
-    CGSize textSize = [text sizeWithFont:font constrainedToSize:maxSize
+    CGSize anMaxSize = CGSizeMake(size.width, CGFLOAT_MAX);
+    CGSize textSize = [text sizeWithFont:font constrainedToSize:anMaxSize
                            lineBreakMode:_lineBreakMode];
     if (_numberOfLines) {
       CGFloat maxHeight = font.ttLineHeight * _numberOfLines;
@@ -300,8 +300,8 @@
       maxWidth = CGFLOAT_MAX;
     }
     CGFloat maxHeight = _numberOfLines ? _numberOfLines * font.ttLineHeight : CGFLOAT_MAX;
-    CGSize maxSize = CGSizeMake(maxWidth, maxHeight);
-    CGSize textSize = [self sizeOfText:text withFont:font size:maxSize];
+    CGSize anMaxSize = CGSizeMake(maxWidth, maxHeight);
+    CGSize textSize = [self sizeOfText:text withFont:font size:anMaxSize];
 
     size.width += textSize.width;
     size.height += textSize.height;

@@ -15,7 +15,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "UIKit.h"
 
 /**
  * Provides support for shake gestures. Sends off a reload request to the global navigator

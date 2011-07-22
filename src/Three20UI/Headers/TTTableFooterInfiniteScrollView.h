@@ -15,7 +15,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "UIKit.h"
 
 @interface TTTableFooterInfiniteScrollView : UIView {
   UIActivityIndicatorView* _indicator;

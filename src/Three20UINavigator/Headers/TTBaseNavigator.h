@@ -15,7 +15,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "UIKit.h"
 
 #import "Three20UINavigator/TTNavigatorPersistenceMode.h"
 

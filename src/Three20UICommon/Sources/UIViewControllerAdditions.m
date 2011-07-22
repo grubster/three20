@@ -308,7 +308,8 @@ TT_FIX_CATEGORY_BUG(UIViewControllerAdditions)
                                                            : UIStatusBarAnimationNone)];
 	else
 #endif
-		[[UIApplication sharedApplication] setStatusBarHidden:!show animated:animated];
+		[[UIApplication sharedApplication] setStatusBarHidden:!show
+                                                withAnimation:UIStatusBarAnimationSlide];
 
   if (animated) {
     [UIView beginAnimations:nil context:NULL];

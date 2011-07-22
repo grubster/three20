@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIKit.h"
 
 // Network
 #import "Three20Network/TTModel.h"

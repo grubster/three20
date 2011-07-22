@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186F1BAB13D9C8640045419E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186F1BAA13D9C8620045419E /* UIKit.framework */; };
 		660E7375135A560A00531398 /* Three20Version.h in Headers */ = {isa = PBXBuildFile; fileRef = 660E7374135A560A00531398 /* Three20Version.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66A0530A132EB47900132434 /* Three20.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A05309132EB47900132434 /* Three20.m */; };
 		66A0530C132EB47F00132434 /* Three20.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A0530B132EB47F00132434 /* Three20.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,6 +58,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		186F1BA913D9C8620045419E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186F1BA213D9C8610045419E /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = UIKit;
+		};
+		186F1BE013D9C9D40045419E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186F1BA213D9C8610045419E /* UIKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = UIKit;
+		};
 		6EB460DD1183D8D400685649 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -67,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186F1BA213D9C8610045419E /* UIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKit.xcodeproj; path = ../UIKit/UIKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		660E7374135A560A00531398 /* Three20Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Three20Version.h; path = Headers/Three20Version.h; sourceTree = "<group>"; };
 		66A05309132EB47900132434 /* Three20.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Three20.m; path = Sources/Three20.m; sourceTree = "<group>"; };
 		66A0530B132EB47F00132434 /* Three20.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Three20.h; path = Headers/Three20.h; sourceTree = "<group>"; };
@@ -129,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186F1BAB13D9C8640045419E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +160,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186F1B9E13D9C84D0045419E /* Chameleon */ = {
+			isa = PBXGroup;
+			children = (
+				186F1BA213D9C8610045419E /* UIKit.xcodeproj */,
+			);
+			name = Chameleon;
+			sourceTree = "<group>";
+		};
+		186F1BA313D9C8610045419E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				186F1BAA13D9C8620045419E /* UIKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +198,7 @@
 				6E7F930B118E0D9000443B46 /* Scripts */,
 				6ED118E41183C38A0096AEBF /* Configurations */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				186F1B9E13D9C84D0045419E /* Chameleon */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -367,6 +401,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				186F1BE113D9C9D40045419E /* PBXTargetDependency */,
 			);
 			name = Three20Core;
 			productName = Three20;
@@ -412,6 +447,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 186F1BA313D9C8610045419E /* Products */;
+					ProjectRef = 186F1BA213D9C8610045419E /* UIKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BEF31F390F352DF5000DE5D2 /* Three20Core */,
@@ -419,6 +460,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		186F1BAA13D9C8620045419E /* UIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIKit.framework;
+			remoteRef = 186F1BA913D9C8620045419E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EB9E6C5D10B6A8F800DE563C /* Resources */ = {
@@ -515,6 +566,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		186F1BE113D9C9D40045419E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UIKit;
+			targetProxy = 186F1BE013D9C9D40045419E /* PBXContainerItemProxy */;
+		};
 		6EB460DE1183D8D400685649 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BEF31F390F352DF5000DE5D2 /* Three20Core */;
@@ -540,15 +596,28 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E55A4B31183CA80002768DE /* Library.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)/../../Build\"/**",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				HEADER_SEARCH_PATHS = (
+					"$(STDLIB_HEADERS)",
+					"\"$(BUILT_PRODUCTS_DIR)/../three20\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../three20\"",
+					"\"$(CONFIGURATION_BUILD_DIR)/../../three20\"",
+					"\"$(SRCROOT)/../../Build/Debug/UIKit.framework/Headers\"",
+				);
 				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx10.6;
 			};
 			name = Internal;
 		};
@@ -572,12 +641,25 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E55A4B31183CA80002768DE /* Library.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)/../../Build\"/**",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				HEADER_SEARCH_PATHS = (
+					"$(STDLIB_HEADERS)",
+					"\"$(BUILT_PRODUCTS_DIR)/../three20\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../three20\"",
+					"\"$(CONFIGURATION_BUILD_DIR)/../../three20\"",
+					"\"$(SRCROOT)/../../Build/Debug/UIKit.framework/Headers\"",
+				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
@@ -585,11 +667,24 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E55A4B31183CA80002768DE /* Library.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)/../../Build\"/**",
+				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(STDLIB_HEADERS)",
+					"\"$(BUILT_PRODUCTS_DIR)/../three20\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../three20\"",
+					"\"$(CONFIGURATION_BUILD_DIR)/../../three20\"",
+					"\"$(SRCROOT)/../../Build/Debug/UIKit.framework/Headers\"",
+				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx10.6;
 				ZERO_LINK = NO;
 			};
 			name = Release;

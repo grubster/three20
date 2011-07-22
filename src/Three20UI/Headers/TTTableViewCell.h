@@ -15,7 +15,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "UIKit.h"
 
 extern const CGFloat    kTableCellSmallMargin;
 extern const CGFloat    kTableCellSpacing;

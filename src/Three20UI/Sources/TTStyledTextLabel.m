@@ -422,9 +422,9 @@ static const CGFloat kCancelHighlightThreshold = 4;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)copy:(id)sender {
-  NSString* text = _text.rootNode.outerText;
-  UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
-  [pasteboard setValue:text forPasteboardType:@"public.utf8-plain-text"];
+//  NSString* text = _text.rootNode.outerText;
+//  UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
+  //[pasteboard setValue:text forPasteboardType:@"public.utf8-plain-text"];
 }
 
 

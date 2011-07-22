@@ -769,10 +769,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				HEADER_SEARCH_PATHS = (
+					"$(STDLIB_HEADERS)",
+					"\"$(BUILT_PRODUCTS_DIR)/../three20\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../three20\"",
+					"\"$(CONFIGURATION_BUILD_DIR)/../../three20\"",
+					"\"$(SRCROOT)/../../Build/Debug/UIKit.framework/Headers\"",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(BASE_PRODUCT_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Internal;
 		};
@@ -802,9 +809,16 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				HEADER_SEARCH_PATHS = (
+					"$(STDLIB_HEADERS)",
+					"\"$(BUILT_PRODUCTS_DIR)/../three20\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../three20\"",
+					"\"$(CONFIGURATION_BUILD_DIR)/../../three20\"",
+					"\"$(SRCROOT)/../../Build/Debug/UIKit.framework/Headers\"",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(BASE_PRODUCT_NAME)";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -815,9 +829,16 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(STDLIB_HEADERS)",
+					"\"$(BUILT_PRODUCTS_DIR)/../three20\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../three20\"",
+					"\"$(CONFIGURATION_BUILD_DIR)/../../three20\"",
+					"\"$(SRCROOT)/../../Build/Debug/UIKit.framework/Headers\"",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(BASE_PRODUCT_NAME)";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
