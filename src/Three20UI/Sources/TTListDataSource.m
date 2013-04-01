@@ -33,8 +33,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithItems:(NSArray*)items {
-	self = [self init];
-  if (self) {
+  if (self = [self init]) {
     _items = [items mutableCopy];
   }
 

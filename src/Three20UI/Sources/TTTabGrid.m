@@ -39,8 +39,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithFrame:(CGRect)frame  {
-	self = [super initWithFrame:frame];
-  if (self) {
+  if (self = [super initWithFrame:frame]) {
     self.style = TTSTYLE(tabGrid);
     _columnCount = 3;
   }

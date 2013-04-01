@@ -34,8 +34,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)identifier {
-	self = [super initWithStyle:style reuseIdentifier:identifier];
-  if (self) {
+  if (self = [super initWithStyle:style reuseIdentifier:identifier]) {
     _activityLabel = [[TTActivityLabel alloc] initWithStyle:TTActivityLabelStyleGray];
     [self.contentView addSubview:_activityLabel];
 

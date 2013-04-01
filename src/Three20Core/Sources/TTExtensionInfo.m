@@ -39,8 +39,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [super init];
-  if (self) {
+  if (self = [super init]) {
     self.version = @"No version provided.";
     self.description = @"No description provided.";
     self.copyright = @"No copyright provided.";

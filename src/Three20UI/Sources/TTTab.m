@@ -42,8 +42,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithItem:(TTTabItem*)tabItem tabBar:(TTTabBar*)tabBar {
-	self = [self init];
-  if (self) {
+  if (self = [self init]) {
     self.tabItem = tabItem;
   }
 

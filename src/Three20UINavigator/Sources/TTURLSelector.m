@@ -34,8 +34,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithName:(NSString*)name {
-	self = [super init];
-  if (self) {
+  if (self = [super init]) {
     _name     = [name copy];
     _selector = NSSelectorFromString(_name);
   }

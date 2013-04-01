@@ -40,8 +40,8 @@
 #import "Three20Core/NSStringAdditions.h"
 #import "Three20Core/TTGlobalCore.h"
 
-static const CGFloat kMarginX = 5.0f;
-static const CGFloat kMarginY = 6.0f;
+static const CGFloat kMarginX = 5;
+static const CGFloat kMarginY = 6;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -58,8 +58,7 @@ static const CGFloat kMarginY = 6.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     self.navigationItem.leftBarButtonItem =
       [[[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemCancel
                                                      target: self
@@ -77,8 +76,7 @@ static const CGFloat kMarginY = 6.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
     if (nil != query) {
       _delegate = [query objectForKey:@"delegate"];
       _defaultText = [[query objectForKey:@"text"] copy];
@@ -478,7 +476,7 @@ static const CGFloat kMarginY = 6.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UITextView*)textView {
-  [self view];
+  self.view;
   return _textView;
 }
 
@@ -486,7 +484,7 @@ static const CGFloat kMarginY = 6.0f;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UINavigationBar*)navigatorBar {
   if (!_navigationBar) {
-    [self view];
+    self.view;
   }
   return _navigationBar;
 }

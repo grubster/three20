@@ -38,8 +38,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [super init];
-  if (self) {
+  if (self = [super init]) {
     _frame = CGRectZero;
     _contentFrame = CGRectZero;
   }

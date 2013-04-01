@@ -27,7 +27,7 @@
 
 
 // Remove GSEvent and UITouchAdditions from Release builds
-#ifdef DEBUG_TOUCHES
+#ifdef DEBUG
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -104,8 +104,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initInView:(UIView *)view location:(CGPoint)location {
-	self = [super init];
-  if (self) {
+  if (self = [super init]) {
     _tapCount = 1;
     _locationInWindow = location;
     _previousLocationInWindow = location;
@@ -140,8 +139,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithTouch:(UITouch *)touch {
-	self = [super init];
-  if (self) {
+  if (self == [super init]) {
     UIEventFake *selfFake = (UIEventFake*)self;
     selfFake->_touches = [[NSMutableSet setWithObject:touch] retain];
     selfFake->_timestamp = [NSDate timeIntervalSinceReferenceDate];
@@ -288,7 +286,7 @@ TT_FIX_CATEGORY_BUG(UIViewAdditions)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (CGFloat)ttScreenX {
-  CGFloat x = 0.0f;
+  CGFloat x = 0;
   for (UIView* view = self; view; view = view.superview) {
     x += view.left;
   }
@@ -298,7 +296,7 @@ TT_FIX_CATEGORY_BUG(UIViewAdditions)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (CGFloat)ttScreenY {
-  CGFloat y = 0.0f;
+  CGFloat y = 0;
   for (UIView* view = self; view; view = view.superview) {
     y += view.top;
   }
@@ -308,7 +306,7 @@ TT_FIX_CATEGORY_BUG(UIViewAdditions)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (CGFloat)screenViewX {
-  CGFloat x = 0.0f;
+  CGFloat x = 0;
   for (UIView* view = self; view; view = view.superview) {
       x += view.left;
 
@@ -423,7 +421,7 @@ TT_FIX_CATEGORY_BUG(UIViewAdditions)
 }
 
 
-#ifdef DEBUG_TOUCHES
+#ifdef DEBUG
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)simulateTapAtPoint:(CGPoint)location {
@@ -443,7 +441,7 @@ TT_FIX_CATEGORY_BUG(UIViewAdditions)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (CGPoint)offsetFromView:(UIView*)otherView {
-  CGFloat x = 0.0f, y = 0.0f;
+  CGFloat x = 0, y = 0;
   for (UIView* view = self; view && view != otherView; view = view.superview) {
     x += view.left;
     y += view.top;

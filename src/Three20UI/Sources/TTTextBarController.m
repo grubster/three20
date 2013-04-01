@@ -41,8 +41,8 @@
 #import "Three20Core/NSStringAdditions.h"
 #import "Three20Core/TTGlobalCore.h"
 
-static CGFloat kMargin  = 1.0f;
-static CGFloat kPadding = 5.0f;
+static CGFloat kMargin  = 1;
+static CGFloat kPadding = 5;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,8 +59,7 @@ static CGFloat kPadding = 5.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
   }
 
   return self;
@@ -69,8 +68,7 @@ static CGFloat kPadding = 5.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
     if (nil != query) {
       _delegate = [query objectForKey:@"delegate"];
       _defaultText = [[query objectForKey:@"text"] copy];
@@ -83,8 +81,7 @@ static CGFloat kPadding = 5.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [self initWithNavigatorURL:nil query:nil];
-  if (self) {
+  if (self = [self initWithNavigatorURL:nil query:nil]) {
   }
 
   return self;

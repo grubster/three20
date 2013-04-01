@@ -57,8 +57,7 @@
             github: (NSString*)github
            twitter: (NSString*)twitter
            website: (NSString*)website {
-	self = [super init];
-  if (self) {
+  if (self = [super init]) {
     self.name     = name;
     self.github   = github;
     self.twitter  = twitter;

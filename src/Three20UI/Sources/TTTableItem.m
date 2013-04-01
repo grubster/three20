@@ -44,8 +44,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithCoder:(NSCoder*)decoder {
-	self = [self init];
-  if (self) {
+  if (self = [self init]) {
   }
 
   return self;

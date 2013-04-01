@@ -36,8 +36,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithTargetClass:(id)targetClass {
-	self = [super init];
-  if (self) {
+  if (self = [super init]) {
     _targetClass = targetClass;
   }
   return self;
@@ -46,8 +45,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [self initWithTargetClass:nil];
-  if (self) {
+  if (self = [self initWithTargetClass:nil]) {
   }
 
   return self;

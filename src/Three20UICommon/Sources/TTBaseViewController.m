@@ -44,8 +44,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     _navigationBarStyle = UIBarStyleDefault;
     _statusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
   }
@@ -56,8 +55,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
   }
 
   return self;

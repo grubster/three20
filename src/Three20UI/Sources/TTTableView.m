@@ -32,10 +32,10 @@
 // Core
 #import "Three20Core/TTCorePreprocessorMacros.h"
 
-static const CGFloat kShadowHeight        = 20.0f;
-static const CGFloat kShadowInverseHeight = 10.0f;
+static const CGFloat kShadowHeight        = 20.0;
+static const CGFloat kShadowInverseHeight = 10.0;
 
-static const CGFloat kCancelHighlightThreshold = 4.0f;
+static const CGFloat kCancelHighlightThreshold = 4;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,8 +50,7 @@ static const CGFloat kCancelHighlightThreshold = 4.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
-	self = [super initWithFrame:frame style:style];
-  if (self) {
+  if (self = [super initWithFrame:frame style:style]) {
     _highlightStartPoint = CGPointZero;
   }
 
@@ -102,15 +101,6 @@ static const CGFloat kCancelHighlightThreshold = 4.0f;
 //  }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesMoved:touches withEvent:event];
-
-    if ([self.delegate respondsToSelector:@selector(tableView:touchesMoved:withEvent:)]) {
-        id<TTTableViewDelegate> delegate = (id<TTTableViewDelegate>)self.delegate;
-        [delegate tableView:self touchesMoved:touches withEvent:event];
-    }
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event {
@@ -258,9 +248,7 @@ static const CGFloat kCancelHighlightThreshold = 4.0f;
 
   } else if (![[self.layer.sublayers objectAtIndex:0] isEqual:_originShadow]) {
     [_originShadow removeFromSuperlayer];
-
-    _originShadow = [self shadowAsInverse:NO];
-   [self.layer insertSublayer:_originShadow atIndex:0];
+    [self.layer insertSublayer:_originShadow atIndex:0];
   }
 
   [CATransaction begin];

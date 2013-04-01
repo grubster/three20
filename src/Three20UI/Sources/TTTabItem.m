@@ -33,8 +33,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithTitle:(NSString*)title {
-	self = [self init];
-  if (self) {
+  if (self = [self init]) {
     self.title = title;
   }
 

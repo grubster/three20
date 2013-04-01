@@ -46,7 +46,7 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 static const CGFloat kInfiniteScrollFooterHeight = 40.0f;
 
 // The percentage of table scrolling to trigger infinite scroll agter
-static const CGFloat kInfiniteScrollThreshold = 0.5f;
+static const CGFloat kInfiniteScrollThreshold = 0.5;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -68,8 +68,7 @@ static const CGFloat kInfiniteScrollThreshold = 0.5f;
 - (id)initWithController:(TTTableViewController*)controller
          withDragRefresh:(BOOL)enableDragRefresh
       withInfiniteScroll:(BOOL)enableInfiniteScroll {
-	self = [super initWithController:controller];
-  if (self) {
+  if (self = [super initWithController:controller]) {
     _dragRefreshEnabled = enableDragRefresh;
     _infiniteScrollEnabled = enableInfiniteScroll;
 

@@ -39,8 +39,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [super init];
-  if (self) {
+  if (self = [super init]) {
     _path = [[NSMutableArray alloc] init];
   }
   return self;

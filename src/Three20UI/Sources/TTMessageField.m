@@ -31,8 +31,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithTitle:(NSString*)title required:(BOOL)required {
-	self = [self init];
-  if (self) {
+  if (self = [self init]) {
     _title    = [title copy];
     _required = required;
   }

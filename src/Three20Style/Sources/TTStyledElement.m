@@ -38,8 +38,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithText:(NSString*)text {
-	self = [self initWithText:text next:nil];
-  if (self) {
+  if (self = [self initWithText:text next:nil]) {
   }
 
   return self;
@@ -48,8 +47,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithText:(NSString*)text next:(TTStyledNode*)nextSibling {
-	self = [super initWithNextSibling:nextSibling];
-  if (self) {
+  if (self = [super initWithNextSibling:nextSibling]) {
     if (nil != text) {
       [self addChild:[[[TTStyledTextNode alloc] initWithText:text] autorelease]];
     }
@@ -61,8 +59,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [self initWithText:nil next:nil];
-  if (self) {
+  if (self = [self initWithText:nil next:nil]) {
   }
 
   return self;

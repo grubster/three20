@@ -57,8 +57,7 @@ static const NSInteger kMaxBadgeNumber = 99;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithItem:(TTLauncherItem*)item {
-	self = [self init];
-  if (self) {
+  if (self = [self init]) {
     _item = [item retain];
 
     NSString* title =  [[NSBundle mainBundle] localizedStringForKey:item.title value:nil table:nil];
@@ -81,8 +80,7 @@ static const NSInteger kMaxBadgeNumber = 99;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithFrame:(CGRect)frame {
-	self = [super initWithFrame:frame];
-  if (self) {
+  if (self = [super initWithFrame:frame]) {
     self.isVertical = YES;
   }
 

@@ -67,8 +67,7 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithController:(TTTableViewController*)controller {
-	self = [super initWithController:controller];
-  if (self) {
+  if (self = [super initWithController:controller]) {
     // Add our refresh header
     _headerView = [[TTTableHeaderDragRefreshView alloc]
                           initWithFrame:CGRectMake(0,
@@ -100,7 +99,6 @@ static const CGFloat kHeaderVisibleHeight = 60.0f;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
   [_model.delegates removeObject:self];
-  [_headerView removeFromSuperview];
   TT_RELEASE_SAFELY(_headerView);
   TT_RELEASE_SAFELY(_model);
 

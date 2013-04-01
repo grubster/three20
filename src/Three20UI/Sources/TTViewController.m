@@ -50,8 +50,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     self.navigationBarTintColor = TTSTYLEVAR(navigationBarTintColor);
   }
 
@@ -61,8 +60,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
   }
 
   return self;
@@ -110,6 +108,13 @@
   [super viewWillAppear:animated];
 
   [TTURLRequestQueue mainQueue].suspended = YES;
+
+  // Ugly hack to work around UISearchBar's inability to resize its text field
+  // to avoid being overlapped by the table section index
+//  if (_searchController && !_searchController.active) {
+//    [_searchController setActive:YES animated:NO];
+//    [_searchController setActive:NO animated:NO];
+//  }
 }
 
 

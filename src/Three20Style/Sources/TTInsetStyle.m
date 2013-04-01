@@ -30,8 +30,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNext:(TTStyle*)next {
-	self = [super initWithNext:next];
-  if (self) {
+  if (self = [super initWithNext:next]) {
     _inset = UIEdgeInsetsZero;
   }
 

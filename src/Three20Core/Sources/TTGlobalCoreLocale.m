@@ -22,7 +22,8 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 NSLocale* TTCurrentLocale() {
-  NSArray* languages = [NSLocale preferredLanguages];
+  NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+  NSArray* languages = [defaults objectForKey:@"AppleLanguages"];
   if (languages.count > 0) {
     NSString* currentLanguage = [languages objectAtIndex:0];
     return [[[NSLocale alloc] initWithLocaleIdentifier:currentLanguage] autorelease];

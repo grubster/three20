@@ -37,8 +37,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString*)identifier {
-	self = [super initWithStyle:style reuseIdentifier:identifier];
-  if (self) {
+  if (self = [super initWithStyle:style reuseIdentifier:identifier]) {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
   }
 

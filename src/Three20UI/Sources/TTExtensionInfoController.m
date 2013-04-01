@@ -38,8 +38,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithExtensionID:(NSString*)identifier {
-	self = [super initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [super initWithNibName:nil bundle:nil]) {
     self.title = @"Extension Info";
     self.tableViewStyle = UITableViewStyleGrouped;
 

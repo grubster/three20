@@ -114,22 +114,8 @@
 
   while (stringIndex < string.length) {
     NSRange searchRange = NSMakeRange(stringIndex, string.length - stringIndex);
-    NSRange httpRange = [string rangeOfString:@"http://" options:NSCaseInsensitiveSearch
-                                range:searchRange];
-    NSRange httpsRange = [string rangeOfString:@"https://" options:NSCaseInsensitiveSearch
+    NSRange startRange = [string rangeOfString:@"http://" options:NSCaseInsensitiveSearch
                                  range:searchRange];
-
-    NSRange startRange;
-    if (httpRange.location == NSNotFound) {
-        startRange = httpsRange;
-
-    } else if (httpsRange.location == NSNotFound) {
-        startRange = httpRange;
-
-    } else {
-        startRange = (httpRange.location < httpsRange.location) ? httpRange : httpsRange;
-    }
-
     if (startRange.location == NSNotFound) {
       NSString* text = [string substringWithRange:searchRange];
       TTStyledTextNode* node = [[[TTStyledTextNode alloc] initWithText:text] autorelease];
@@ -209,7 +195,6 @@
   } else if ([tag isEqualToString:@"a"]) {
     TTStyledLinkNode* node = [[[TTStyledLinkNode alloc] init] autorelease];
     node.URL =  [attributeDict objectForKey:@"href"];
-    node.className =  [attributeDict objectForKey:@"class"];
     [self pushNode:node];
 
   } else if ([tag isEqualToString:@"button"]) {
@@ -272,18 +257,6 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)parseText:(NSString*)string URLs:(BOOL)shouldParseURLs {
-  if (shouldParseURLs) {
-    [self parseURLs:string];
-  }
-  else {
-    TTStyledTextNode* node = [[[TTStyledTextNode alloc] initWithText:string] autorelease];
-    [self addNode:node];
-  }
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Public
@@ -313,7 +286,7 @@
         // Find all text before the line break and parse it
         NSRange textRange = NSMakeRange(stringIndex, range.location - stringIndex);
         NSString* substr = [string substringWithRange:textRange];
-        [self parseText:substr URLs:_parseURLs];
+        [self parseURLs:substr];
 
         // Add a line break node after the text
         TTStyledLineBreakNode* br = [[[TTStyledLineBreakNode alloc] init] autorelease];
@@ -321,18 +294,20 @@
 
         stringIndex = stringIndex + substr.length + 1;
 
-      }
-      else {
+      } else {
         // Find all text until the end of hte string and parse it
         NSString* substr = [string substringFromIndex:stringIndex];
-        [self parseText:substr URLs:_parseURLs];
+        [self parseURLs:substr];
         break;
       }
     }
 
-  }
-  else {
-    [self parseText:string URLs:_parseURLs];
+  } else if (_parseURLs) {
+    [self parseURLs:string];
+
+  } else {
+    TTStyledTextNode* node = [[[TTStyledTextNode alloc] initWithText:string] autorelease];
+    [self addNode:node];
   }
 }
 

@@ -19,8 +19,7 @@
 // extJSON
 #import "extThree20JSON/TTErrorCodes.h"
 #ifdef EXTJSON_SBJSON
-#import "extThree20JSON/SBJson.h"
-#import "extThree20JSON/NSString+SBJSON.h"
+#import "extThree20JSON/JSON.h"
 #elif defined(EXTJSON_YAJL)
 #import "extThree20JSON/NSObject+YAJL.h"
 #endif
@@ -62,11 +61,9 @@
   NSError* err = nil;
   if ([data isKindOfClass:[NSData class]]) {
 #ifdef EXTJSON_SBJSON
-    NSString* json = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-    // When there are newline characters in the JSON string, 
-    // the error "Unescaped control character '0x9'" will be thrown. This removes those characters.
-    json =  [json stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]]; 
+    NSString* json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     _rootObject = [[json JSONValue] retain];
+    TT_RELEASE_SAFELY(json);
     if (!_rootObject) {
       err = [NSError errorWithDomain:kTTExtJSONErrorDomain
                                 code:kTTExtJSONErrorCodeInvalidJSON

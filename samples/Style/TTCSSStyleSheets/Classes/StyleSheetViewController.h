@@ -16,6 +16,8 @@
 
 @interface StyleSheetViewController : TTViewController {
 @private
+  TTCSSStyleSheet*  _styleSheet;
+
   BOOL              _loadedSuccessfully;
 }
 

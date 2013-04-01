@@ -41,7 +41,7 @@
 #import "Three20Core/TTGlobalCoreRects.h"
 #import "Three20Core/TTCorePreprocessorMacros.h"
 
-static CGFloat kThumbnailRowHeight = 79.0f;
+static CGFloat kThumbnailRowHeight = 79;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -55,8 +55,7 @@ static CGFloat kThumbnailRowHeight = 79.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     self.statusBarStyle = UIStatusBarStyleBlackTranslucent;
     self.navigationBarStyle = UIBarStyleBlackTranslucent;
     self.navigationBarTintColor = nil;
@@ -70,8 +69,7 @@ static CGFloat kThumbnailRowHeight = 79.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithDelegate:(id<TTThumbsViewControllerDelegate>)delegate {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
     self.delegate = delegate;
   }
 
@@ -95,8 +93,7 @@ static CGFloat kThumbnailRowHeight = 79.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
   }
 
   return self;

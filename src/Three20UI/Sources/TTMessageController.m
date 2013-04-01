@@ -61,8 +61,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     _fields = [[NSArray alloc] initWithObjects:
                [[[TTMessageRecipientField alloc] initWithTitle: TTLocalizedString(@"To:", @"")
                                                       required: YES] autorelease],
@@ -91,8 +90,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithRecipients:(NSArray*)recipients {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
     _initialRecipients = [recipients retain];
   }
 
@@ -147,7 +145,6 @@
       label.text = field.title;
       label.font = TTSTYLEVAR(messageFont);
       label.textColor = TTSTYLEVAR(messageFieldTextColor);
-      label.backgroundColor = TTSTYLEVAR(backgroundColor);
       [label sizeToFit];
       label.frame = CGRectInset(label.frame, -2, 0);
       textField.leftView = label;
@@ -169,7 +166,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)layoutViews {
-  CGFloat y = 0.0f;
+  CGFloat y = 0;
 
   for (UIView* view in _scrollView.subviews) {
     view.frame = CGRectMake(0, y, self.view.width, view.height);
@@ -423,7 +420,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)restoreView:(NSDictionary*)state {
-  [self view];
+  self.view;
   TT_RELEASE_SAFELY(_initialRecipients);
   NSMutableArray* fields = [state objectForKey:@"fields"];
   for (NSInteger i = 0; i < fields.count; ++i) {
@@ -540,7 +537,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString*)subject {
-  [self view];
+  self.view;
   for (int i = 0; i < _fields.count; ++i) {
     id field = [_fields objectAtIndex:i];
     if ([field isKindOfClass:[TTMessageSubjectField class]]) {
@@ -554,7 +551,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setSubject:(NSString*)subject {
-  [self view];
+  self.view;
   for (int i = 0; i < _fields.count; ++i) {
     id field = [_fields objectAtIndex:i];
     if ([field isKindOfClass:[TTMessageSubjectField class]]) {
@@ -574,7 +571,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setBody:(NSString*)body {
-  [self view];
+  self.view;
   _textEditor.text = body;
 }
 
@@ -610,7 +607,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)addRecipient:(id)recipient forFieldAtIndex:(NSUInteger)fieldIndex {
-  [self view];
+  self.view;
   TTPickerTextField* textField = [_fieldViews objectAtIndex:fieldIndex];
   if ([textField isKindOfClass:[TTPickerTextField class]]) {
     NSString* label = [_dataSource tableView:textField.tableView labelForObject:recipient];
@@ -623,7 +620,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString*)textForFieldAtIndex:(NSUInteger)fieldIndex {
-  [self view];
+  self.view;
 
   NSString* text = nil;
   if (fieldIndex == _fieldViews.count) {
@@ -643,7 +640,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setText:(NSString*)text forFieldAtIndex:(NSUInteger)fieldIndex {
-  [self view];
+  self.view;
   if (fieldIndex == _fieldViews.count) {
     _textEditor.text = text;
 
@@ -658,7 +655,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)fieldHasValueAtIndex:(NSUInteger)fieldIndex {
-  [self view];
+  self.view;
 
   if (fieldIndex == _fieldViews.count) {
     return _textEditor.text.length > 0;
@@ -682,7 +679,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIView*)viewForFieldAtIndex:(NSUInteger)fieldIndex {
-  [self view];
+  self.view;
 
   if (fieldIndex == _fieldViews.count) {
     return _textEditor;

@@ -23,9 +23,9 @@
 // Core
 #import "Three20Core/TTCorePreprocessorMacros.h"
 
-static CGFloat kPadding         = 10.0f;
-static CGFloat kButtonHeight    = 30.0f;
-static CGFloat kButtonMaxWidth  = 120.0f;
+static CGFloat kPadding         = 10;
+static CGFloat kButtonHeight    = 30;
+static CGFloat kButtonMaxWidth  = 120;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,8 +39,7 @@ static CGFloat kButtonMaxWidth  = 120.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithFrame:(CGRect)frame {
-	self = [super initWithFrame:frame];
-  if (self) {
+  if (self = [super initWithFrame:frame]) {
     _buttons = [[NSMutableArray alloc] init];
 
     self.buttonStyle = @"toolbarButton:";

@@ -71,12 +71,7 @@ TT_FIX_CATEGORY_BUG(UITabBarControllerAdditions)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIViewController*)topSubcontroller {
-  if (self.tabBar.selectedItem == self.moreNavigationController.tabBarItem) {
-    return self.moreNavigationController;
-  }
-  else {
-    return self.selectedViewController;
-  }
+  return self.selectedViewController;
 }
 
 

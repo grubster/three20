@@ -39,7 +39,7 @@
 #import "Three20Core/TTCorePreprocessorMacros.h"
 #import "Three20Core/TTDebug.h"
 
-static const CGFloat kCancelHighlightThreshold = 4.0f;
+static const CGFloat kCancelHighlightThreshold = 4;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,8 +59,7 @@ static const CGFloat kCancelHighlightThreshold = 4.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithFrame:(CGRect)frame {
-	self = [super initWithFrame:frame];
-  if (self) {
+  if (self = [super initWithFrame:frame]) {
     _textAlignment  = UITextAlignmentLeft;
     _contentInset   = UIEdgeInsetsZero;
 
@@ -455,7 +454,6 @@ static const CGFloat kCancelHighlightThreshold = 4.0f;
     _text = [text retain];
     _text.delegate = self;
     _text.font = _font;
-    _text.textAlignment = _textAlignment;
     [self setNeedsLayout];
     [self setNeedsDisplay];
   }
@@ -484,14 +482,6 @@ static const CGFloat kCancelHighlightThreshold = 4.0f;
   }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)setTextAlignment:(UITextAlignment)textAlignment {
-  if (textAlignment != _textAlignment) {
-    _textAlignment = textAlignment;
-    _text.textAlignment = _textAlignment;
-    [self setNeedsLayout];
-  }
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIColor*)textColor {

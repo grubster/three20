@@ -61,8 +61,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithCoder:(NSCoder*)decoder {
-	self = [super initWithCoder:decoder];
-  if (self) {
+  if (self = [super initWithCoder:decoder]) {
     self.caption = [decoder decodeObjectForKey:@"caption"];
     self.control = [decoder decodeObjectForKey:@"control"];
   }

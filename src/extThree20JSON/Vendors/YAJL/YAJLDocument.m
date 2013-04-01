@@ -46,10 +46,6 @@ NSInteger YAJLDocumentStackCapacity = 20;
 }
 
 - (id)initWithParserOptions:(YAJLParserOptions)parserOptions {
-  return [self initWithParserOptions:parserOptions capacity:YAJLDocumentStackCapacity];
-}
-
-- (id)initWithParserOptions:(YAJLParserOptions)parserOptions capacity:(NSInteger)capacity {
   if ((self = [super init])) {
     stack_ = [[NSMutableArray alloc] initWithCapacity:YAJLDocumentStackCapacity];
     keyStack_ = [[NSMutableArray alloc] initWithCapacity:YAJLDocumentStackCapacity];
@@ -61,11 +57,7 @@ NSInteger YAJLDocumentStackCapacity = 20;
 }
 
 - (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions error:(NSError **)error {
-  return [self initWithData:data parserOptions:parserOptions capacity:YAJLDocumentStackCapacity error:error];
-}
-
-- (id)initWithData:(NSData *)data parserOptions:(YAJLParserOptions)parserOptions capacity:(NSInteger)capacity error:(NSError **)error {
-  if ((self = [self initWithParserOptions:parserOptions capacity:capacity])) {
+  if ((self = [self initWithParserOptions:parserOptions])) {
     [self parse:data error:error];
   }
   return self;

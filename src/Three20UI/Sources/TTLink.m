@@ -42,8 +42,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithFrame:(CGRect)frame {
-	self = [super initWithFrame:frame];
-  if (self) {
+  if (self = [super initWithFrame:frame]) {
     self.userInteractionEnabled = NO;
     [self addTarget: self
              action: @selector(linkTouched) forControlEvents:UIControlEventTouchUpInside];

@@ -53,8 +53,7 @@ TT_FIX_CATEGORY_BUG(UIViewController_TTNavigator)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNavigatorURL:(NSURL*)URL query:(NSDictionary*)query {
-  self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
   }
 
   return self;

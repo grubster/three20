@@ -42,8 +42,7 @@ static const NSTimeInterval kPauseInterval = 0.4;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithSearchBar:(UISearchBar*)searchBar contentsController:(UIViewController*)controller {
-	self = [super initWithSearchBar:searchBar contentsController:controller];
-  if (self) {
+  if (self = [super initWithSearchBar:searchBar contentsController:controller]) {
     self.delegate = self;
   }
 

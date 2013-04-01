@@ -37,8 +37,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithText:(NSString*)text {
-	self = [self init];
-  if (self) {
+  if (self = [self init]) {
     self.text = text;
   }
   return self;
@@ -47,8 +46,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithFrame:(CGRect)frame {
-	self = [super initWithFrame:frame];
-  if (self) {
+  if (self = [super initWithFrame:frame]) {
     _text = nil;
     _font = nil;
   }

@@ -36,8 +36,7 @@
  * TTURLRequestQueue's sendRequest.
  * For all other TTURLRequest types, they will each have their own loader.
  */
-@interface TTRequestLoader : NSObject
-{
+@interface TTRequestLoader : NSObject {
   NSString*               _urlPath;
 
   TTURLRequestQueue*      _queue;

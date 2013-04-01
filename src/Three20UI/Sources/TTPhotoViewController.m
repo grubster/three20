@@ -30,7 +30,6 @@
 #import "Three20UI/UIToolbarAdditions.h"
 
 // UINavigator
-#import "Three20UINavigator/TTGlobalNavigatorMetrics.h"
 #import "Three20UINavigator/TTURLObject.h"
 #import "Three20UINavigator/TTURLMap.h"
 #import "Three20UINavigator/TTBaseNavigationController.h"
@@ -71,8 +70,7 @@ static const NSInteger kActivityLabelTag          = 96;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     self.navigationItem.backBarButtonItem =
       [[[UIBarButtonItem alloc]
         initWithTitle:
@@ -97,8 +95,7 @@ static const NSInteger kActivityLabelTag          = 96;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithPhoto:(id<TTPhoto>)photo {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
     self.centerPhoto = photo;
   }
 
@@ -108,8 +105,7 @@ static const NSInteger kActivityLabelTag          = 96;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithPhotoSource:(id<TTPhotoSource>)photoSource {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
     self.photoSource = photoSource;
   }
 
@@ -119,8 +115,7 @@ static const NSInteger kActivityLabelTag          = 96;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)init {
-	self = [self initWithNibName:nil bundle:nil];
-  if (self) {
+  if (self = [self initWithNibName:nil bundle:nil]) {
   }
 
   return self;
@@ -240,7 +235,12 @@ static const NSInteger kActivityLabelTag          = 96;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)updateToolbarWithOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  _toolbar.height = TTToolbarHeight();
+  if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
+    _toolbar.height = TT_TOOLBAR_HEIGHT;
+
+  } else {
+    _toolbar.height = TT_LANDSCAPE_TOOLBAR_HEIGHT+1;
+  }
   _toolbar.top = self.view.height - _toolbar.height;
 }
 
@@ -379,8 +379,7 @@ static const NSInteger kActivityLabelTag          = 96;
       // The photo source has a URL mapping in TTURLMap, so we use that to show the thumbs
       NSDictionary* query = [NSDictionary dictionaryWithObject:self forKey:@"delegate"];
       TTBaseNavigator* navigator = [TTBaseNavigator navigatorForView:self.view];
-      _thumbsController = (TTThumbsViewController*)[[navigator viewControllerForURL:URL
-                                                                              query:query] retain];
+      _thumbsController = [[navigator viewControllerForURL:URL query:query] retain];
       [navigator.URLMap setObject:_thumbsController forURL:URL];
 
     } else {

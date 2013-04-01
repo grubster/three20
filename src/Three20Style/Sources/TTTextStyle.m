@@ -22,7 +22,6 @@
 #import "Three20Style/UIFontAdditions.h"
 
 // Core
-#import "Three20Core/NSStringAdditions.h"
 #import "Three20Core/TTCorePreprocessorMacros.h"
 
 
@@ -44,8 +43,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNext:(TTStyle*)next {
-	self = [super initWithNext:next];
-  if (self) {
+  if (self = [super initWithNext:next]) {
     _shadowOffset = CGSizeZero;
     _numberOfLines = 1;
     _textAlignment = UITextAlignmentCenter;
@@ -231,16 +229,7 @@
   }
 
   if (_shadowColor) {
-    // Due to a bug in OS versions 3.2 and 4.0, the shadow appears upside-down. It pains me to
-    // write this, but a lot of research has failed to turn up a way to detect the flipped shadow
-    // programmatically
-    float shadowYOffset = -_shadowOffset.height;
-    NSString *osVersion = [UIDevice currentDevice].systemVersion;
-    if ([osVersion versionStringCompare:@"3.2"] != NSOrderedAscending) {
-      shadowYOffset = _shadowOffset.height;
-    }
-
-    CGSize offset = CGSizeMake(_shadowOffset.width, shadowYOffset);
+    CGSize offset = CGSizeMake(_shadowOffset.width, -_shadowOffset.height);
     CGContextSetShadowWithColor(ctx, offset, 0, _shadowColor.CGColor);
   }
 
